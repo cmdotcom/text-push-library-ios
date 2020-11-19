@@ -9,12 +9,12 @@ let package = Package(
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "CMPush",
-            targets: ["CMPushPackage"]),
+            targets: ["CMPush"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
     ],
     targets:[
-        .binaryTarget(name: "CMPushPackage", url: "https://github.com/cmdotcom/text-push-library-ios/blob/main/CMPush.xcframework.zip", checksum: "676a4b6d1d51cd10979d1902919f82fa3d4a04b9c2ce5871bdc85d1e2ddfd93e")
+        .binaryTarget(name: "CMPush", url: "https://github.com/cmdotcom/text-push-library-ios/blob/main/CMPush.xcframework.zip", checksum: "5b09862e77be7e1b802679eed01136f4d1919a47563ce012c226f488a6f411ea")
         ])
