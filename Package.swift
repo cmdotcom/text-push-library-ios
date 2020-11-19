@@ -18,5 +18,5 @@ let package = Package(
     targets:[
         .binaryTarget(
 					name: "CMPush", 
-					path: "CMPush.xcframework"
+					path: "CMPush.xcframework")
         ])
