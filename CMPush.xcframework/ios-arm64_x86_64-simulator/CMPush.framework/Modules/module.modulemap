@@ -1,0 +1,11 @@
+framework module CMPush {
+  umbrella header "CMPush.h"
+
+  export *
+  module * { export * }
+}
+
+module CMPush.Swift {
+    header "CMPush-Swift.h"
+    requires objc
+}
