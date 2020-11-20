@@ -9,8 +9,6 @@ Please see [https://www.cm.com/app/docs/en/api/business-messaging-api/1.0/index#
 
 To enable pushing messages to your app you need to enable push in your app settings and you have to add the CMPush framework to your project. 
 
-You can add the swift package from GitHub by adding the following URL as a repository in Xcode: https://github.com/cmdotcom/text-push-library-ios
-
 ## Adding push capabilities to your project
 
 Select the target and under 'Signing & Capabilities' use add (+) capability to add push notifications and the background mode ‘Remote notifications’.
@@ -24,6 +22,8 @@ The CMPush library confirms push messages and this functionality needs to be cal
 To allow communication between the app and the notification service extension, a group should be added to the app and the notification service. Use add (+) capabiliy to add an app group to your project and notification service. Use the same name for both of them.
 
 ## Add CMPush XCframework
+
+You can add the swift package from GitHub by adding the following URL as a repository in Xcode: [https://github.com/cmdotcom/text-push-library-ios](https://github.com/cmdotcom/text-push-library-ios)
 
 ## Enable push in AppDelegate
 
