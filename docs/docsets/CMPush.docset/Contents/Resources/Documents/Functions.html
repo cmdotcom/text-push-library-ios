@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Functions  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+    <script src="js/lunr.min.js" defer></script>
+    <script src="js/typeahead.jquery.js" defer></script>
+    <script src="js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Section/Functions" class="dashAnchor"></a>
+    <a title="Functions  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">CMPush 2.1.0 Docs</a> (93% documented)</p>
+        <div class="header-right">
+          <form role="search" action="search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </div>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">CMPush</a>
+        <img id="carat" src="img/carat.png" alt=""/>
+        Functions  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Enums/CMPushEnvironment.html">CMPushEnvironment</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/CMPushError.html">CMPushError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/CMPushSuggestion.html">CMPushSuggestion</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:6CMPush0A7_Config14applicationKey9groupNameySS_SStF">CMPush_Config(applicationKey:groupName:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:6CMPush0A26_HandleNotificationRequest_18withContentHandlerySo014UNNotificationD0C_ySo0hF0CctF">CMPush_HandleNotificationRequest(_:withContentHandler:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:6CMPush0A27_HandleNotificationResponse_21withCompletionHandlerySo014UNNotificationD0C_yyctF">CMPush_HandleNotificationResponse(_:withCompletionHandler:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:6CMPush0A20_HasRegisteredMSISDNSbyF">CMPush_HasRegisteredMSISDN()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:6CMPush0A15_InstallationIDSSSgyF">CMPush_InstallationID()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:6CMPush0A13_IsRegisteredSbyF">CMPush_IsRegistered()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:6CMPush0A24_SetApplePushEnvironmentyyAA0aE0OF">CMPush_SetApplePushEnvironment(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:6CMPush0A12_SetDelegateyyAA0aC0_pSgF">CMPush_SetDelegate(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:6CMPush0A17_UnregisterMSISDN10withResultyys0E0OyytAA0A5ErrorOGc_tF">CMPush_UnregisterMSISDN(withResult:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:6CMPush0A13_UpdateMSISDN_10withResultySS_ys0E0OyytAA0A5ErrorOGctF">CMPush_UpdateMSISDN(_:withResult:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:6CMPush0A10_UpdateOTP6msisdn3otp10withResultySS_SSys0G0OyytAA0A5ErrorOGctF">CMPush_UpdateOTP(msisdn:otp:withResult:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:6CMPush0A24_UpdatePushAuthorizationyyF">CMPush_UpdatePushAuthorization()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:6CMPush0A12_UpdateToken06deviceC010withResulty10Foundation4DataV_ys0F0OySSAA0A5ErrorOGctF">CMPush_UpdateToken(deviceToken:withResult:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols/CMPushDelegate.html">CMPushDelegate</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>Functions</h1>
+            <p>The following functions are available globally.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6CMPush0A24_SetApplePushEnvironmentyyAA0aE0OF"></a>
+                    <a name="//apple_ref/swift/Function/CMPush_SetApplePushEnvironment(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6CMPush0A24_SetApplePushEnvironmentyyAA0aE0OF">CMPush_SetApplePushEnvironment(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Configure CMPush. Should be called at application startup to set the apple push environment. Production or Sandbox. Default value is production</p>
+<h1 id='example' class='heading'>Example</h1>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">CMPush</span>
+
+<span class="o">...</span>
+
+<span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span> <span class="nv">launchOptions</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIApplication</span><span class="o">.</span><span class="kt">LaunchOptionsKey</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+   <span class="c1">// Configure CMPush</span>
+<span class="cp">#if DEBUG</span>
+   <span class="kt">CMPush_SetApplePushEnvironment</span><span class="p">(</span><span class="o">.</span><span class="kt">Sandbox</span><span class="p">)</span>
+<span class="cp">#endif</span>
+   <span class="kt">CMPush_Config</span><span class="p">(</span><span class="nv">applicationKey</span><span class="p">:</span> <span class="s">"&lt;appkey&gt;"</span><span class="p">,</span> <span class="nv">groupName</span><span class="p">:</span> <span class="s">"group.com.cm.myapp"</span><span class="p">)</span>
+
+   <span class="kt">UIApplication</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">registerForRemoteNotifications</span><span class="p">()</span>
+   <span class="kt">UNUserNotificationCenter</span><span class="o">.</span><span class="nf">current</span><span class="p">()</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>
+   <span class="k">return</span> <span class="kc">true</span>
+<span class="p">}</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="kt">CMPush_SetApplePushEnvironment</span><span class="p">(</span><span class="n">_</span> <span class="nv">environment</span><span class="p">:</span> <span class="kt"><a href="Enums/CMPushEnvironment.html">CMPushEnvironment</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>environment</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>select .Sandbox or .Production</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>nothing</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6CMPush0A7_Config14applicationKey9groupNameySS_SStF"></a>
+                    <a name="//apple_ref/swift/Function/CMPush_Config(applicationKey:groupName:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6CMPush0A7_Config14applicationKey9groupNameySS_SStF">CMPush_Config(applicationKey:<wbr>groupName:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Configure CMPush. Should be called at application startup</p>
+<h1 id='example' class='heading'>Example</h1>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">CMPush</span>
+<span class="o">...</span>
+<span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span> <span class="nv">launchOptions</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIApplication</span><span class="o">.</span><span class="kt">LaunchOptionsKey</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+   <span class="c1">// Configure CMPush</span>
+   <span class="kt">CMPush_Config</span><span class="p">(</span><span class="nv">applicationKey</span><span class="p">:</span> <span class="s">"&lt;appkey&gt;"</span><span class="p">,</span> <span class="nv">groupName</span><span class="p">:</span> <span class="s">"group.com.cm.myapp"</span><span class="p">,</span> <span class="nv">delegate</span><span class="p">:</span> <span class="k">self</span><span class="p">)</span>
+
+   <span class="kt">UIApplication</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">registerForRemoteNotifications</span><span class="p">()</span>
+   <span class="kt">UNUserNotificationCenter</span><span class="o">.</span><span class="nf">current</span><span class="p">()</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>
+   <span class="k">return</span> <span class="kc">true</span>
+<span class="p">}</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="kt">CMPush_Config</span><span class="p">(</span><span class="nv">applicationKey</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">groupName</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>applicationKey</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>your CM Push account</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>groupName</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>apple group to communicatie between app and alert push extension</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>nothing</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6CMPush0A12_SetDelegateyyAA0aC0_pSgF"></a>
+                    <a name="//apple_ref/swift/Function/CMPush_SetDelegate(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6CMPush0A12_SetDelegateyyAA0aC0_pSgF">CMPush_SetDelegate(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets the delegate on the CMPush SDK to handle suggestions.</p>
+
+<p>Implement <code><a href="Protocols/CMPushDelegate.html">CMPushDelegate</a></code>-protocol for example in your <code>AppDelegate</code></p>
+<h1 id='example' class='heading'>Example</h1>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">CMPush</span>
+<span class="o">...</span>
+<span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span> <span class="nv">launchOptions</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIApplication</span><span class="o">.</span><span class="kt">LaunchOptionsKey</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+   <span class="c1">// Configure CMPush</span>
+   <span class="o">...</span>
+   <span class="kt">CMPush_SetDelegate</span><span class="p">(</span><span class="k">self</span><span class="p">)</span>
+   <span class="o">...</span>
+   <span class="k">return</span> <span class="kc">true</span>
+<span class="p">}</span>
+<span class="o">...</span>
+<span class="kd">extension</span> <span class="kt">AppDelegate</span> <span class="p">:</span> <span class="kt">CMPushDelegate</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">cmPushHandleSuggestion</span><span class="p">(</span><span class="n">_</span> <span class="nv">suggestion</span><span class="p">:</span> <span class="kt">CMPushSuggestion</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">switch</span> <span class="n">suggestion</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nf">openURL</span><span class="p">(</span><span class="k">let</span> <span class="nv">label</span><span class="p">,</span> <span class="k">let</span> <span class="nv">url</span><span class="p">):</span>
+            <span class="kt">UIApplication</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">open</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="nv">options</span><span class="p">:</span> <span class="p">[:],</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nf">openAppPage</span><span class="p">(</span><span class="nv">label</span><span class="p">:</span> <span class="k">let</span> <span class="nv">label</span><span class="p">,</span> <span class="k">let</span> <span class="nv">page</span><span class="p">):</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"Open app page: </span><span class="se">\(</span><span class="n">page</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+        <span class="kd">@unknown</span> <span class="k">default</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="kt">CMPush_SetDelegate</span><span class="p">(</span><span class="n">_</span> <span class="nv">delegate</span><span class="p">:</span> <span class="kt"><a href="Protocols/CMPushDelegate.html">CMPushDelegate</a></span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>delegate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>object that implements <code><a href="Protocols/CMPushDelegate.html">CMPushDelegate</a></code> to handle suggestion actions, for example your <code>AppDelegate</code>. Pass nil to remove delegate.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>nothing</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6CMPush0A12_UpdateToken06deviceC010withResulty10Foundation4DataV_ys0F0OySSAA0A5ErrorOGctF"></a>
+                    <a name="//apple_ref/swift/Function/CMPush_UpdateToken(deviceToken:withResult:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6CMPush0A12_UpdateToken06deviceC010withResulty10Foundation4DataV_ys0F0OySSAA0A5ErrorOGctF">CMPush_UpdateToken(deviceToken:<wbr>withResult:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Update push token.</p>
+<h1 id='notes' class='heading'>Notes:</h1>
+
+<p>Call  in application didRegisterForRemoteNotificationsWithDeviceToken</p>
+<h1 id='example' class='heading'>Example</h1>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">CMPush</span>
+
+<span class="o">...</span>
+
+<span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">didRegisterForRemoteNotificationsWithDeviceToken</span> <span class="nv">deviceToken</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">CMPush_UpdateToken</span><span class="p">(</span><span class="nv">deviceToken</span><span class="p">:</span> <span class="n">deviceToken</span><span class="p">){</span><span class="n">result</span> <span class="k">in</span>
+        <span class="k">switch</span> <span class="n">result</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nf">success</span><span class="p">(</span><span class="k">let</span> <span class="nv">installationID</span><span class="p">):</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"CM PUSH INSTALLATION ID: </span><span class="se">\(</span><span class="n">installationID</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nf">failure</span><span class="p">(</span><span class="k">let</span> <span class="nv">error</span><span class="p">):</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"CM PUSH ERROR: </span><span class="se">\(</span><span class="n">error</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="kt">CMPush_UpdateToken</span><span class="p">(</span><span class="nv">deviceToken</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="n">withResult</span> <span class="nv">result</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Result</span><span class="o">&lt;</span><span class="kt">String</span><span class="p">,</span> <span class="kt"><a href="Enums/CMPushError.html">CMPushError</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>deviceToken</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p></p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>withResult</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>resultHandler of token update. Returns installationID if successfull. <code><a href="Enums/CMPushError.html">CMPushError</a></code> if failed.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>nothing</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6CMPush0A13_UpdateMSISDN_10withResultySS_ys0E0OyytAA0A5ErrorOGctF"></a>
+                    <a name="//apple_ref/swift/Function/CMPush_UpdateMSISDN(_:withResult:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6CMPush0A13_UpdateMSISDN_10withResultySS_ys0E0OyytAA0A5ErrorOGctF">CMPush_UpdateMSISDN(_:<wbr>withResult:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Update MSISDN. This triggers an OTP sms, so use with care. Only when new MSISDN is entered or resend is needed.</p>
+<h1 id='example' class='heading'>Example</h1>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">CMPush</span>
+
+<span class="o">...</span>
+<span class="kt">CMPush_UpdateMSISDN</span><span class="p">(</span><span class="n">msisdn</span><span class="p">)</span> <span class="p">{</span> <span class="n">result</span> <span class="k">in</span>
+    <span class="k">switch</span> <span class="n">result</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="o">.</span><span class="nv">success</span><span class="p">:</span>
+        <span class="c1">//go to otp screen, for example:</span>
+        <span class="k">self</span><span class="o">.</span><span class="nf">performSegue</span><span class="p">(</span><span class="nv">withIdentifier</span><span class="p">:</span> <span class="s">"optcode"</span><span class="p">,</span> <span class="nv">sender</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+    <span class="k">case</span> <span class="o">.</span><span class="nf">failure</span><span class="p">(</span><span class="k">let</span> <span class="nv">error</span><span class="p">):</span>
+        <span class="k">var</span> <span class="nv">errorMessage</span> <span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
+        <span class="k">switch</span> <span class="n">error</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">notRegistered</span><span class="p">:</span>
+            <span class="c1">//Make sure CM_UpdateToken was completed successfully</span>
+            <span class="k">break</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">noMsisdn</span><span class="p">:</span>
+            <span class="c1">//Cannot happen here</span>
+            <span class="k">break</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nf">offline</span><span class="p">(</span><span class="k">let</span> <span class="nv">error</span><span class="p">):</span>
+            <span class="n">errorMessage</span> <span class="o">=</span> <span class="p">(</span><span class="n">error</span> <span class="k">as</span> <span class="kt">NSError</span><span class="p">)</span><span class="o">.</span><span class="n">localizedFailureReason</span> <span class="p">??</span> <span class="s">"No internet connection"</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nf">serverError</span><span class="p">(</span><span class="nv">message</span><span class="p">:</span> <span class="k">let</span> <span class="nv">message</span><span class="p">,</span> <span class="nv">details</span><span class="p">:</span> <span class="k">let</span> <span class="nv">details</span><span class="p">):</span>
+            <span class="n">errorMessage</span> <span class="o">=</span> <span class="n">message</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nf">systemError</span><span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="k">let</span> <span class="nv">error</span><span class="p">):</span>
+            <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nf">internalError</span><span class="p">(</span><span class="nv">message</span><span class="p">:</span> <span class="k">let</span> <span class="nv">message</span><span class="p">):</span>
+            <span class="nf">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+        <span class="kd">@unknown</span> <span class="k">default</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">message</span> <span class="o">=</span> <span class="n">errorMessage</span> <span class="p">{</span>
+            <span class="k">let</span> <span class="nv">alert</span> <span class="o">=</span> <span class="kt">UIAlertController</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"Error"</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="n">message</span><span class="p">,</span> <span class="nv">preferredStyle</span><span class="p">:</span> <span class="o">.</span><span class="n">alert</span><span class="p">)</span>
+            <span class="n">alert</span><span class="o">.</span><span class="nf">addAction</span><span class="p">(</span><span class="kt">UIAlertAction</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"OK"</span><span class="p">,</span> <span class="nv">style</span><span class="p">:</span> <span class="o">.</span><span class="k">default</span><span class="p">,</span> <span class="nv">handler</span><span class="p">:</span> <span class="kc">nil</span><span class="p">))</span>
+            <span class="k">self</span><span class="o">.</span><span class="nf">present</span><span class="p">(</span><span class="n">alert</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="kt">CMPush_UpdateMSISDN</span><span class="p">(</span><span class="n">_</span> <span class="nv">msisdn</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">withResult</span> <span class="nv">result</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Result</span><span class="o">&lt;</span><span class="kt">Void</span><span class="p">,</span> <span class="kt"><a href="Enums/CMPushError.html">CMPushError</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>msisdn</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the msisdn to send OTP to</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>withResult</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>resultHandler of Msisdn update.  Returns <code><a href="Enums/CMPushError.html">CMPushError</a></code> if failed.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>nothing</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6CMPush0A10_UpdateOTP6msisdn3otp10withResultySS_SSys0G0OyytAA0A5ErrorOGctF"></a>
+                    <a name="//apple_ref/swift/Function/CMPush_UpdateOTP(msisdn:otp:withResult:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6CMPush0A10_UpdateOTP6msisdn3otp10withResultySS_SSys0G0OyytAA0A5ErrorOGctF">CMPush_UpdateOTP(msisdn:<wbr>otp:<wbr>withResult:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Update OTP.  This verifies the OTP on the server with the last MSISDN that was used in <code>CM_UpdateMSISDN</code>.</p>
+<h1 id='example' class='heading'>Example</h1>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">CMPush</span>
+
+<span class="o">...</span>
+<span class="kt">CMPush_UpdateOTP</span><span class="p">(</span><span class="nv">msisdn</span><span class="p">:</span> <span class="n">msisdn</span><span class="p">,</span> <span class="nv">otp</span><span class="p">:</span> <span class="n">otpCode</span><span class="p">){</span><span class="n">result</span> <span class="k">in</span>
+    <span class="k">switch</span> <span class="n">result</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="o">.</span><span class="nv">success</span><span class="p">:</span>
+        <span class="c1">//go to success flow</span>
+        <span class="k">break</span>
+    <span class="k">case</span> <span class="o">.</span><span class="nf">failure</span><span class="p">(</span><span class="k">let</span> <span class="nv">error</span><span class="p">):</span>
+        <span class="k">var</span> <span class="nv">errorMessage</span> <span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
+        <span class="k">switch</span> <span class="n">error</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">notRegistered</span><span class="p">:</span>
+            <span class="c1">//Make sure CM_UpdateToken was completed successfully</span>
+            <span class="k">break</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">noMsisdn</span><span class="p">:</span>
+            <span class="c1">//Make sure CM_UpdateMSISDN was performed successfully</span>
+            <span class="k">break</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nf">offline</span><span class="p">(</span><span class="k">let</span> <span class="nv">error</span><span class="p">):</span>
+            <span class="n">errorMessage</span> <span class="o">=</span> <span class="p">(</span><span class="n">error</span> <span class="k">as</span> <span class="kt">NSError</span><span class="p">)</span><span class="o">.</span><span class="n">localizedFailureReason</span> <span class="p">??</span> <span class="s">"No internet connection"</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nf">serverError</span><span class="p">(</span><span class="nv">message</span><span class="p">:</span> <span class="k">let</span> <span class="nv">message</span><span class="p">,</span> <span class="nv">details</span><span class="p">:</span> <span class="k">let</span> <span class="nv">details</span><span class="p">):</span>
+            <span class="n">errorMessage</span> <span class="o">=</span> <span class="n">message</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nf">systemError</span><span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="k">let</span> <span class="nv">error</span><span class="p">):</span>
+            <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nf">internalError</span><span class="p">(</span><span class="nv">message</span><span class="p">:</span> <span class="k">let</span> <span class="nv">message</span><span class="p">):</span>
+            <span class="nf">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+        <span class="kd">@unknown</span> <span class="k">default</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">message</span> <span class="o">=</span> <span class="n">errorMessage</span> <span class="p">{</span>
+            <span class="k">let</span> <span class="nv">alert</span> <span class="o">=</span> <span class="kt">UIAlertController</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"Error"</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="n">message</span><span class="p">,</span> <span class="nv">preferredStyle</span><span class="p">:</span> <span class="o">.</span><span class="n">alert</span><span class="p">)</span>
+            <span class="n">alert</span><span class="o">.</span><span class="nf">addAction</span><span class="p">(</span><span class="kt">UIAlertAction</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"OK"</span><span class="p">,</span> <span class="nv">style</span><span class="p">:</span> <span class="o">.</span><span class="k">default</span><span class="p">,</span> <span class="nv">handler</span><span class="p">:</span> <span class="kc">nil</span><span class="p">))</span>
+            <span class="k">self</span><span class="o">.</span><span class="nf">present</span><span class="p">(</span><span class="n">alert</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
+        <span class="p">}</span>
+
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="kt">CMPush_UpdateOTP</span><span class="p">(</span><span class="nv">msisdn</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">otp</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">withResult</span> <span class="nv">result</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Result</span><span class="o">&lt;</span><span class="kt">Void</span><span class="p">,</span> <span class="kt"><a href="Enums/CMPushError.html">CMPushError</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>msisdn</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the MSISDN for which the OTP was requested</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>otp</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the received OTP code</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>withResult</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>resultHandler of OTP update.  Returns <code><a href="Enums/CMPushError.html">CMPushError</a></code> if failed.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>nothing</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6CMPush0A24_UpdatePushAuthorizationyyF"></a>
+                    <a name="//apple_ref/swift/Function/CMPush_UpdatePushAuthorization()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6CMPush0A24_UpdatePushAuthorizationyyF">CMPush_UpdatePushAuthorization()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Update push authorization status to server</p>
+<h1 id='example' class='heading'>Example</h1>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">CMPush</span>
+
+<span class="o">...</span>
+<span class="k">let</span> <span class="nv">unCenter</span> <span class="o">=</span> <span class="kt">UNUserNotificationCenter</span><span class="o">.</span><span class="nf">current</span><span class="p">()</span>
+<span class="n">unCenter</span><span class="o">.</span><span class="nf">requestAuthorization</span><span class="p">(</span><span class="nv">options</span><span class="p">:</span> <span class="p">[</span><span class="o">.</span><span class="n">alert</span><span class="p">,</span> <span class="o">.</span><span class="n">sound</span><span class="p">,</span> <span class="o">.</span><span class="n">badge</span><span class="p">])</span> <span class="p">{</span><span class="n">granted</span><span class="p">,</span><span class="n">error</span> <span class="k">in</span>
+    <span class="kt">CMPush_UpdatePushAuthorization</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">granted</span> <span class="p">{</span>
+        <span class="c1">// User allowed push notifications</span>
+    <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+        <span class="c1">// User denied push notifications</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="kt">CMPush_UpdatePushAuthorization</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>nothing</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6CMPush0A17_UnregisterMSISDN10withResultyys0E0OyytAA0A5ErrorOGc_tF"></a>
+                    <a name="//apple_ref/swift/Function/CMPush_UnregisterMSISDN(withResult:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6CMPush0A17_UnregisterMSISDN10withResultyys0E0OyytAA0A5ErrorOGc_tF">CMPush_UnregisterMSISDN(withResult:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Unregister MSISDN</p>
+<h1 id='example' class='heading'>Example</h1>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">CMPush</span>
+
+<span class="o">...</span>
+
+<span class="kt">CMPush_UnregisterMSISDN</span><span class="p">()</span> <span class="p">{</span><span class="n">result</span> <span class="k">in</span>
+    <span class="k">switch</span> <span class="n">result</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="o">.</span><span class="nv">success</span><span class="p">:</span>
+        <span class="k">self</span><span class="o">.</span><span class="nf">checkRegistration</span><span class="p">()</span>
+    <span class="k">case</span> <span class="o">.</span><span class="nf">failure</span><span class="p">(</span><span class="k">let</span> <span class="nv">error</span><span class="p">):</span>
+        <span class="k">var</span> <span class="nv">errorMessage</span> <span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
+        <span class="k">switch</span> <span class="n">error</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">notRegistered</span><span class="p">:</span>
+            <span class="c1">//Make sure CM_UpdateToken was completed successfully</span>
+            <span class="k">break</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">noMsisdn</span><span class="p">:</span>
+            <span class="c1">//Make sure CM_UpdateMsisdn was performed successfully</span>
+            <span class="k">break</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nf">offline</span><span class="p">(</span><span class="k">let</span> <span class="nv">error</span><span class="p">):</span>
+            <span class="n">errorMessage</span> <span class="o">=</span> <span class="p">(</span><span class="n">error</span> <span class="k">as</span> <span class="kt">NSError</span><span class="p">)</span><span class="o">.</span><span class="n">localizedFailureReason</span> <span class="p">??</span> <span class="s">"No internet connection"</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nf">serverError</span><span class="p">(</span><span class="nv">message</span><span class="p">:</span> <span class="k">let</span> <span class="nv">message</span><span class="p">,</span> <span class="nv">details</span><span class="p">:</span> <span class="k">let</span> <span class="nv">details</span><span class="p">):</span>
+            <span class="n">errorMessage</span> <span class="o">=</span> <span class="n">message</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nf">systemError</span><span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="k">let</span> <span class="nv">error</span><span class="p">):</span>
+            <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nf">internalError</span><span class="p">(</span><span class="nv">message</span><span class="p">:</span> <span class="k">let</span> <span class="nv">message</span><span class="p">):</span>
+            <span class="nf">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+        <span class="kd">@unknown</span> <span class="k">default</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">message</span> <span class="o">=</span> <span class="n">errorMessage</span> <span class="p">{</span>
+            <span class="k">let</span> <span class="nv">alert</span> <span class="o">=</span> <span class="kt">UIAlertController</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"Error"</span><span class="p">,</span> <span class="nv">message</span><span class="p">:</span> <span class="n">message</span><span class="p">,</span> <span class="nv">preferredStyle</span><span class="p">:</span> <span class="o">.</span><span class="n">alert</span><span class="p">)</span>
+            <span class="n">alert</span><span class="o">.</span><span class="nf">addAction</span><span class="p">(</span><span class="kt">UIAlertAction</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"OK"</span><span class="p">,</span> <span class="nv">style</span><span class="p">:</span> <span class="o">.</span><span class="k">default</span><span class="p">,</span> <span class="nv">handler</span><span class="p">:</span> <span class="kc">nil</span><span class="p">))</span>
+            <span class="k">self</span><span class="o">.</span><span class="nf">present</span><span class="p">(</span><span class="n">alert</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="kt">CMPush_UnregisterMSISDN</span><span class="p">(</span><span class="n">withResult</span> <span class="nv">result</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Result</span><span class="o">&lt;</span><span class="kt">Void</span><span class="p">,</span> <span class="kt"><a href="Enums/CMPushError.html">CMPushError</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>result</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>callback with result</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>nothing</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6CMPush0A13_IsRegisteredSbyF"></a>
+                    <a name="//apple_ref/swift/Function/CMPush_IsRegistered()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6CMPush0A13_IsRegisteredSbyF">CMPush_IsRegistered()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns true if registered to CM server.
+This indicates if the CMPush_UpdateToken call was completed.</p>
+<h1 id='example' class='heading'>Example</h1>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">CMPush</span>
+
+<span class="o">...</span>
+
+<span class="k">if</span> <span class="kt">CMPush_IsRegistered</span><span class="p">()</span> <span class="p">{</span>
+
+<span class="p">}</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="kt">CMPush_IsRegistered</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>true or false</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6CMPush0A15_InstallationIDSSSgyF"></a>
+                    <a name="//apple_ref/swift/Function/CMPush_InstallationID()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6CMPush0A15_InstallationIDSSSgyF">CMPush_InstallationID()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns installationID if registered to CM server.
+This indicates if the CMPush_UpdateToken call was completed.</p>
+<h1 id='example' class='heading'>Example</h1>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">CMPush</span>
+
+<span class="o">...</span>
+
+<span class="k">if</span> <span class="k">let</span> <span class="nv">installationID</span> <span class="o">=</span> <span class="kt">CMPush_InstallationID</span><span class="p">()</span> <span class="p">{</span>
+       <span class="c1">//registered.</span>
+<span class="p">}</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="kt">CMPush_InstallationID</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>installationID or nil</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6CMPush0A20_HasRegisteredMSISDNSbyF"></a>
+                    <a name="//apple_ref/swift/Function/CMPush_HasRegisteredMSISDN()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6CMPush0A20_HasRegisteredMSISDNSbyF">CMPush_HasRegisteredMSISDN()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns true if MSISDN was validated with OTP</p>
+<h1 id='example' class='heading'>Example</h1>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">CMPush</span>
+
+<span class="o">...</span>
+
+<span class="k">if</span> <span class="kt">CMPush_HasRegisteredMSISDN</span><span class="p">()</span> <span class="p">{</span>
+
+<span class="p">}</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">deprecated</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="kt">CMPush_HasRegisteredMSISDN</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>true or false</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6CMPush0A26_HandleNotificationRequest_18withContentHandlerySo014UNNotificationD0C_ySo0hF0CctF"></a>
+                    <a name="//apple_ref/swift/Function/CMPush_HandleNotificationRequest(_:withContentHandler:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6CMPush0A26_HandleNotificationRequest_18withContentHandlerySo014UNNotificationD0C_ySo0hF0CctF">CMPush_HandleNotificationRequest(_:<wbr>withContentHandler:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Pre-process the received CM Push NotificationRequest.
+This function reports the received status to CM to let CM verify the delivery of the push message.
+This function also handles media-attachments in the notificationrequest. It will pre-download media and attach it to the Push Notification.</p>
+
+<p>If the CM Push message contains suggestions they are added here as buttons to the Push Notification.
+Supported Action types: <code><a href="Enums/CMPushSuggestion.html">CMPushSuggestion</a></code></p>
+
+<p>Add the following code to your <code>UNNotificationServiceExtension</code>.</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">CMPush</span>
+
+<span class="o">...</span>
+
+<span class="k">override</span> <span class="kd">func</span> <span class="nf">didReceive</span><span class="p">(</span><span class="n">_</span> <span class="nv">request</span><span class="p">:</span> <span class="kt">UNNotificationRequest</span><span class="p">,</span> <span class="n">withContentHandler</span> <span class="nv">contentHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">UNNotificationContent</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
+   <span class="kt">CMPush_HandleNotificationRequest</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="nv">withContentHandler</span><span class="p">:</span> <span class="n">contentHandler</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="kt">CMPush_HandleNotificationRequest</span><span class="p">(</span><span class="n">_</span> <span class="nv">request</span><span class="p">:</span> <span class="kt">UNNotificationRequest</span><span class="p">,</span> <span class="n">withContentHandler</span> <span class="nv">contentHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">UNNotificationContent</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>request</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code>UNNotificationRequest</code></p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>withContentHandler</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>(<code>UNNotificationContent</code>) -&gt; Void</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>nothing</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6CMPush0A27_HandleNotificationResponse_21withCompletionHandlerySo014UNNotificationD0C_yyctF"></a>
+                    <a name="//apple_ref/swift/Function/CMPush_HandleNotificationResponse(_:withCompletionHandler:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6CMPush0A27_HandleNotificationResponse_21withCompletionHandlerySo014UNNotificationD0C_yyctF">CMPush_HandleNotificationResponse(_:<wbr>withCompletionHandler:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Handle suggestion (button) that was selected by the user.
+This functions reports the postbackdata back to CM and calls <code><a href="Protocols/CMPushDelegate.html#/s:6CMPush0A8DelegateP22cmPushHandleSuggestionyyAA0aF0OF">CMPushDelegate.cmPushHandleSuggestion(...)</a></code> to allow the app to handle the clicked button.</p>
+
+<p>Add the following code to your AppDelegate</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">CMPush</span>
+
+<span class="o">...</span>
+
+<span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span> <span class="nv">launchOptions</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIApplication</span><span class="o">.</span><span class="kt">LaunchOptionsKey</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+    <span class="o">...</span>
+    <span class="kt">CMPush_SetDelegate</span><span class="p">(</span><span class="k">self</span><span class="p">)</span>
+    <span class="o">...</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">userNotificationCenter</span><span class="p">(</span><span class="n">_</span> <span class="nv">center</span><span class="p">:</span> <span class="kt">UNUserNotificationCenter</span><span class="p">,</span> <span class="n">didReceive</span> <span class="nv">response</span><span class="p">:</span> <span class="kt">UNNotificationResponse</span><span class="p">,</span> <span class="n">withCompletionHandler</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">CMPush_HandleNotificationResponse</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="nv">withCompletionHandler</span><span class="p">:</span> <span class="n">completionHandler</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="kt">CMPush_HandleNotificationResponse</span><span class="p">(</span><span class="n">_</span> <span class="nv">response</span><span class="p">:</span> <span class="kt">UNNotificationResponse</span><span class="p">,</span> <span class="n">withCompletionHandler</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>response</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code>UNNotificationResponse</code></p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>withCompletionHandler</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>( ) -&gt; Void</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>nothing</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2025 <a class="link" href="https://cm.com" target="_blank" rel="external noopener">CM</a>. All rights reserved. (Last updated: 2025-02-28)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.15.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</html>

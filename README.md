@@ -1,232 +1,163 @@
-
 ![CM](./Images/logo.svg)
 
 # CMPush
 
-CMPush is a solution for customers that want to send push notifications to their apps by using phone numbers. 
-The CM platform will look up the corresponding push token for the telephone number and send a push message. When a push message can't be delivered for some reason, CM will send the message by SMS (or another channel , if configured)
-
----
-# RELEASE NOTES
-
-## 2.0.0
-
-##### Breaking
-
-* The SDK now always registers to the server with the ``CMPush_UpdateToken(deviceToken:withResult:)`` call. There is no mechanism to unregister.
-
-* ``CMPush_UpdateToken(deviceToken:withResult:)`` now returns the installationID or a ``CMPushError`` in the completion handler. Use the installationID to send push messages to your customers if the MSISDN OTP flow is not needed. The installationID can be added to the customer account for example. Call ``CMPush_UnregisterMSISDN(withResult:)`` when the user logs out. Don't perform ``CMPush_UpdateMSISDN(_:withResult:)`` before the installationID was received.
-
-* ``CMPush_PreRegister(msisdn:sender:withResult:)`` is deprecated and replaced with ``CMPush_UpdateMSISDN(_:withResult:)``. Use this call after ``CMPush_UpdateToken(deviceToken:withResult:)`` completed successfully to start OTP flow.
-
-* ``CMPush_Register(msisdn:otpCode:withResult:)`` is deprecrated and replaced with ``CMPush_UpdateOTP(msisdn:otp:withResult:)``. Use this call to send the OTP code to the server.
-
-* ``CMPush_DeleteRegistration(withResult:)`` is deprecated and replaced with ``CMPush_UnregisterMSISDN(withResult:)``. Use this call to unregister the MSISDN from the push installation. 
-
-* Addded ``CMPush_UpdatePushAuthorization()`` to inform the server when the user allowed push or not.
-
-* ``CMPush_StatusReport(bestAttemptContent:withResult:)`` is deprecated and replaced with ``CMPush_HandleNotificationRequest(_:withContentHandler:)``. Update your ``UNNotificationServiceExtension`` code as shown in ``CMPush_HandleNotificationRequest(_:withContentHandler:)``
-
-* Added ``CMPush_HandleNotificationResponse(_:withCompletionHandler:)`` to handle button-presses and report read/dismissed status to CM server.
-
-* ``CMPush_IsRegistered()`` now checks if the SDK is registered with the CM server. Use ``CMPush_HasRegisteredMSISDN()`` to check wether a MSISDN was registered to this account.
-
-* Added ``CMPush_InstallationID`` to retrieve the installationID (or null if not yet registered to CM server). Use the installationID to send push messages to your customers if the MSISDN OTP flow is not needed.
-
-##### Upgrade guide
-* Update your AppDelegate as described in ``CMPush_Config(applicationKey:groupName:)`` and ``CMPush_SetDelegate(_:)``
-* Wait for ``CMPush_UpdateToken(deviceToken:withResult:)`` to return the installationID before starting `CMPush_UpdateMSISDN(_:withResult:)``. If no MSISDN verification is needed, store the installationID in the customer account.
-* Replace your call to ``CMPush_PreRegister(msisdn:sender:withResult:)`` with ``CMPush_UpdateMSISDN(_:withResult:)``
-* Replace your call to ``CMPush_Register(msisdn:otpCode:withResult:)`` with ``CMPush_UpdateOTP(msisdn:otp:withResult:)``
-* Replace your call to ``CMPush_DeleteRegistration(withResult:)`` with ``CMPush_UnregisterMSISDN(withResult:)``
-* Replace your call to ``CMPush_IsRegistered()`` with ``CMPush_HasRegisteredMSISDN()`` if you want to determine wether a MSISDN was registered.
-* Update your NotificationService-extension as described in ``CMPush_HandleNotificationRequest(_:withContentHandler:)``
-* Update your AppDelegate as described in  ``CMPush_HandleNotificationResponse(_:withCompletionHandler:)``
-
-##### Enhancements
-
-* Support for rich media in push notifications.
-  Supported media are:
-  - "audio/mpeg": MP3 audio (max 5MB)
-  - "audio/m4a": MP4 audio (max 5MB)
-  - "image/jpeg": JPG image (max 10MB)
-  - "image/png": PNG image (max 10MB)
-  - "video/mp4": MP4 video (max 50MB)
-
-* Support for suggestions (actions) in push notifications.
-  Supported actions are:
-  - OpenUrl: website url. The app can choose to open it in the app for example or redirect to Safari
-  - OpenAppPage: open a specific page in the app.
-  Set the delegate, implement the delegate callback and call `CMPush_HandleNotificationResponse(...)` as described in the guide below.
-  
-* Report preferred language to the CM server to be able to localize messages
-* Report Push Notification authorization status to the server to detect wether user has allowed push messages to be shown.
-* Now also supports Push Notifications without SMS verification (OTP) flow. 
-
-## 1.0.4
-* Initial release
+CMPush is a solution for sending rich push notifications to app users. These notifications support a **default action** (short tap) and long-press actions and media support for notifications.
 
 ---
 
-# ONBOARDING
+## Table of Contents
+1. [Introduction](#introduction)  
+2. [Getting Started](#getting-started)  
+   - [Prerequisites](#prerequisites)  
+   - [Onboarding with CM](#onboarding-with-cm)  
+3. [Installation](#installation)  
+   - [Swift Package Manager](#swift-package-manager)  
+   - [Manual Installation](#manual-installation)  
+4. [Configuration](#configuration)
+   - [Add Notification Service Extension target](#add-notification-service-extension-target)
+   - [Setting Up AppDelegate](#setting-up-appdelegate)  
+   - [Notification Service Extension](#notification-service-extension)  
+5. [Changelog](#changelog)
+   - [2.1.0](#210)
+6. [Features](#features)  
+7. [Troubleshooting](#troubleshooting)  
+8. [Reference](#reference)  
+   - [API Glossary](#api-glossary)  
+9. [Appendices](#appendices)  
+   - [Deprecated APIs](#deprecated-apis)
+---
 
-Developers need to onboard at CM by providing a push certificate (.crt)
+## Introduction
 
-The onboarding process at CM will return a unique applicationKey, that needs to be passed into the library. 
+CMPush provides an easy-to-integrate library for delivering **rich media push notifications**. Key features include:  
 
+- **Rich Media Support**
+- **Single-tap Action**
+- **Suggestions**
+- **User Interaction Feedback**
 
-# Adding CMPush to project
+---
 
-To enable CMPush you need to enable push in your app settings and you have to add the CMPush framework to your project. Next you have to add a Notification Service Extension. The CMPush library confirms push message and this functionality needs to be called from Notification Service Extension to be sure that is always called when iOS is receiving a CM Push message.
+## Requirements
 
+### Prerequisites
 
+- **Minimum iOS app deployment version**: 12.0 or newer  
+- **Apple Developer Account**: An Apple Developer Account is required to create a push notification certificate.
 
-## Adding push to project
+### Onboarding with CM
 
-Select the target and use add (+) capability to add push notifications and the background mode 'Remote notifications'. See image for example.
+To use CMPush, onboard with CM by:  
 
-![adding push to project](./Images/XcodePush.png)
+1. **Generating a Certificate**: Use the `.csr` file provided by CM to create an **Apple Push Notification service SSL (Sandbox & Production)** certificate in the [Apple Developer Portal](https://developer.apple.com/account/resources/certificates/list).  
+2. **Obtaining Application Key**: CM will provide a unique `applicationKey`.
 
+---
 
-## Adding Notification Service Extension build target
+## Installation
 
-The CMPush library confirms push message and this functionality needs to be called from Notification Service Extension to be sure that is always called when iOS is receiving a CM Push message.
+### Swift Package Manager
 
-Use (+) to add a new target.
+1. Open Xcode and navigate to `File > Add Package Dependencies...`.  
+2. Enter the repository URL: `https://github.com/cmdotcom/text-push-library-ios`.  
+3. Select "Exact Version" and choose the latest release.  
 
-![add extension](./Images/XcodeAddExtension.png)
+### Manual Installation
 
-![add extension](./Images/XcodeExtension.png)
+1. Copy the `CMPush.xcframework` into your project.  
+2. Go to your XCode project settings, select your App target `General > Frameworks, Libraries, and Embedded Content` and set the CMPush framework to "Embed & Sign".
 
+---
 
-## Adding App Group to the project
+## Configuration
 
-To allow communication between the app and the notification service extension a group should be added to the app and the notification service. Use add (+) capabiliy to add an app group to your project and notification service. Use the same name for both of them.
+### Add Notification Service Extension target
+![Add Notification Service Extension](./Images/XcodeExtension.png
+![Add Notification Service Extension](./Images/XcodeAddExtension.png)
 
-![add app group](./Images/XcodePushGroup.png)
+### Enable App Groups, Remote notifications in Background Modes & Push Notifications
+![Add capabilities](./Images/XcodePush.png)
 
-![add app group](./Images/XcodeExtensionGroup.png)
+Note: The App Group is required to share data between the main app and the Notification Service Extension. Ensure the group name matches across configurations.
 
+### Setting Up AppDelegate
 
-## Add CMPush via Swift Package Manager
+Configure CMPush at application startup:  
 
-Use the following URL to directly add the package to your project: https://github.com/cmdotcom/text-push-library-ios
-
-Open the Package Manager in XCode and click +
-
-![add CMPush XCFramework](./Images/XcodePackageManager.png)
-
-Insert the above URL in the searchfield on the right top:
-
-![add CMPush XCFramework](./Images/XcodePackageManager2.png)
-
-Select "Exact Version" and select 2.0.0:
-
-![add CMPush XCFramework](./Images/XcodePackageManager3.png)
-
-
-## Add CMPush XCframework manually
-
-Copy CMPush XCFramework to project
-
-![add CMPush XCFramework](./Images/XcodeAddFramework.png)
-
-Embed framework
-
-![add CMPush XCFramework](./Images/XcodeAddFramework2.png)
-
-![add CMPush XCFramework](./Images/XcodeAddFramework3.png)
-
-
-## Enable push in AppDelegate
-
-CM Push needs to be configured at application startup. Add CMPush_Config with account id and groupname to didFinishLaunchingWithOptions in the appdelegate. Call registerForRemoteNotifications to generate push token. In the didRegisterForRemoteNotificationsWithDeviceToken call CMPush_UpdateToken with the token.
-
-Add also UNUserNotificationCenterDelegate to the app delegate and set the delegate in didFinishLaunchingWithOptions.
-
-See example code.
-
-
-``` Swift
+```swift
 import UIKit
 import CMPush
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, CMPushDelegate {
 
-    var window: UIWindow?
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Configure CMPush
+    
         #if DEBUG
         CMPush_SetApplePushEnvironment(.Sandbox)
         #endif
-        
         CMPush_Config(applicationKey: "1234", groupName: "group.com.cm.CMPushTest")
-        
         CMPush_SetDelegate(self)
-        
-        // Register push to get push token
         UIApplication.shared.registerForRemoteNotifications()
-        
-        // Alert notifications
         UNUserNotificationCenter.current().delegate = self
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+            CMPush_UpdatePushAuthorization()
+        }
+
         return true
     }
-
+    
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
         print("Remote notification is unavailable: \(error.localizedDescription)")
     }
 
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        CMPush_UpdateToken(deviceToken: deviceToken){result in
+        CMPush_UpdateToken(deviceToken: deviceToken) { result in
             switch result {
-            case .success(let installationID):
-                print("CM PUSH INSTALLATION ID: \(installationID)")
-            case .failure(let error):
-                print("CM PUSH ERROR: \(error)")
+                case .success(let installationID):
+                    print("CM PUSH INSTALLATION ID: \(installationID)")
+                case .failure(let error):
+                    print("CM PUSH ERROR: \(error)")
             }
         }
     }
     
+    // Handles interactions with notification
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        // Handle suggestions (buttons) clicked by the user
         CMPush_HandleNotificationResponse(response, withCompletionHandler: completionHandler)
     }
-
-    //MARK:- CMPushDelegate protocol
+    
+    // Function that gets called when user pressed on an action
     func cmPushHandleSuggestion(_ suggestion: CMPushSuggestion) {
         switch suggestion {
-        case .openURL(let label, let url):
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)    // present the URL any way that fits this app
-        case .openAppPage(let label, let page):
-            print("Open app page: \(page)")
-        @unknown default:
-            break
+            case .openURL(_, let url):
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            case .openAppPage(label: _, let page):
+                print("Open app page: \(page)")
+            @unknown default:
+                break
         }
     }
 }
-
 ```
 
-## Pre-process received CM Push notifications in UNNotificationServiceExtension
+---
 
-CM Push needs to be configured in the NotificationService init. Add CMPush_Config with account id and groupname to init() in the service.
-In the notification service add CMPush_HandleNotificationRequest to confirm delivery of push messages, download media and handle suggestions (actions). 
+### Notification Service Extension
 
-See example code.
+Handle rich media notifications and delivery confirmations:  
 
-@note 
-CMPush_StatusReport is deprecated. Replace your UNNotificationServiceExtension code as show below.
-The new API is simpler and can handle media and suggestions.
-
-``` Swift
+```swift
 import UserNotifications
 import CMPush
 
 class NotificationService: UNNotificationServiceExtension {
-
     override init() {
+        #if DEBUG
+        CMPush_SetApplePushEnvironment(.Sandbox)
+        #endif
         CMPush_Config(applicationKey: "1234", groupName: "group.com.cm.CMPushTest")
         super.init()
     }
@@ -237,44 +168,137 @@ class NotificationService: UNNotificationServiceExtension {
 }
 ```
 
-## Register MSISDN and trigger OTP flow
+---
 
-### Register
+## Changelog
 
-Use ``CMPush_UpdateMSISDN(_:withResult:)`` to register a new MSISDN to the CM push installation. This triggers an OTP sms.
+### 2.1.0
 
-``` Swift
+**Added**
+- Default action to notifications.
+- Reply action for notifications.
+- PrivacyInfo.xcprivacy file.
 
-    // Ask user permission
-    let unCenter = UNUserNotificationCenter.current()
-    unCenter.requestAuthorization(options: [.alert, .sound, .badge]) {granted,error in
-        DispatchQueue.main.async {
-            //Update authorization on the CM server
-            CMPush_UpdatePushAuthorization()
+**Modified**
+- Status report sent to CM when the user opens a notification.
 
-            if granted {
-                //Register MSISDN. Can also register if push is not granted if needed.
-                CMPush_UpdateMSISDN(msisdn) { result in
-                    //Handle result.
-                }
-            } else {
-                //Push not allowed.
-            }
-        }
-    }
-```
+**Fixed**
+- Rich notification content not downloaded and displayed.
 
-### Verify OTP
+**Removed**
+- Deprecated functions from version 1.
 
-Use ``CMPush_UpdateOTP(msisdn:otp:withResult:)`` to verify an OTP that user has received by SMS, link a phone number to this device.
+**Deprecated**
+- SMS verification (OTP) flow functions.
 
-```
-import CMPush
-...
-CMPush_UpdateOTP(msisdn: msisdn, otp: otpCode){result in
-    //handle result
+**Updated**
+- This `README.md` file for the latest changes.
+
+---
+
+## Features
+
+### Rich Media Support
+
+Supported media types:  
+
+| Type            | Format        | Max Size |
+|------------------|---------------|----------|
+| Audio           | MP3 (audio/mpeg), MP4 (audio/m4a)| 5MB      |
+| Images          | JPG (image/jpeg), PNG (image/png)| 10MB     |
+| Video           | MP4 (video/mp4)| 50MB     |
+
+### Default Action
+
+Define a `defaultAction` in your push payload for single-tap actions. Example:  
+
+```json
+{...
+  "defaultAction": {
+    "action": "OpenUrl",
+    "url": "https://example.com"
+  }...
 }
 ```
 
+---
+
+## Troubleshooting
+
+### Common Issues
+
+1. **Push Token Registration Fails**  
+   - Ensure Push Notifications and Remote notifications in Background Modes are enabled in app capabilities.  
+   - Check if `CMPush_UpdateToken` is called in `didRegisterForRemoteNotifications`.
+   
+2. **Not Receiving Notifications**
+   - Make sure that `CMPush_SetApplePushEnvironment(.Sandbox)` is set for debug builds.
+
+3. **Media And Suggestions Not Displayed/"Notification not preprocessed in UNNotificationServiceExtension. Make sure you have set up your project correctly according to the documentation." log message**
+   - Check if `CMPush_HandleNotificationRequest` is called in the `didReceive` function of the Notification Service Extension.
+   - Ensure that the App Group capability is enabled in XCode and Apple Developer Portal.
+   - CMPush library is embedded/added in the Notification Service Extension target. Alternatively, Notification Service Extension is embedded in the main target.
+   - Check if the Notification Service Extension is part of a Copy Files build phase with destination "PlugIns and Foundation Extensions" of the main app target. This should happen automatically when creating the Notification Service Extension.
+   - Verify original media file size, media type and json structure of push payload.
+
+4. **Not Seeing Logging Messages Of Extension**
+   - Start app and send a notification to start the extension process.
+   - Attach the debugger to the process by going to `Debug > Attach to Process` and selecting your extension from the list.
+![Enable Extension Debugging](./Images/XcodeAttachDebugger.png)
+
+5. **Nothing Happening After Interacting With Notification**
+   - Implement function `cmPushHandleSuggestion(suggestion)` in `extension AppDelegate : CMPushDelegate {}`
+
+---
+
+## Reference
+
+### API Glossary
+
+- `CMPush_Config(applicationKey:groupName:)`  
+   Initializes CMPush with an application key and group name.
+
+- `CMPush_SetDelegate`
+   Set the AppDelegate so CMPush can call `cmPushHandleSuggestion(suggestion)`.
+
+- `CMPush_SetApplePushEnvironment`
+   Set the Apple environment that CM should use to send notifications. Use .Sandbox for Debug builds and .Production (default) for production builds.
+
+- `CMPush_UpdatePushAuthorization`
+   Update the registration at CM about the authorization given by the user to show push notifications.
+
+- `CMPush_UpdateToken(deviceToken:withResult:)`  
+   Registers the device token and returns an installation ID.
+
+- `CMPush_HandleNotificationResponse(_:withCompletionHandler:)`
+   Handle action that was pressed by the user.
+
+- `CMPush_HandleNotificationRequest(_:withContentHandler:)`
+   Pre-process the received CM Push NotificationRequest.
+
+- `CMPush_IsRegistered`
+   Returns true if registered to CM server.
+   
+- `CMPush_InstallationID`
+   Returns installationID if registered to CM server.
+---
+
+## Appendices
+
+### Deprecated APIs
+
+The following APIs are deprecated and no longer supported:  
+
+| API Method                                     | Used In Version | Replacement                           |
+|------------------------------------------------|-----------------|---------------------------------------|
+| `CMPush_PreRegister(msisdn:sender:withResult:)` | v1              | `CMPush_UpdateMSISDN(_:withResult:)` |
+| `CMPush_Register(msisdn:otpCode:withResult:)`  | v1              | `CMPush_UpdateOTP(msisdn:otp:withResult:)` |
+| `CMPush_StatusReport(bestAttemptContent:withResult:)` | v1         | `CMPush_HandleNotificationRequest(_:withContentHandler:)` |
+| `CMPush_DeleteRegistration(withResult:)`       | v1              | `CMPush_UnregisterMSISDN(withResult:)` |
+| `CMPush_UpdateMSISDN(_:withResult:)`           | v2              | Not replaced                          |
+| `CMPush_UpdateOTP(msisdn:otp:withResult:)`     | v2              | Not replaced                          |
+| `CMPush_UnregisterMSISDN(withResult:)`         | v2              | Not replaced                          |
+| `CMPush_HasRegisteredMSISDN`                   | v2              | Not replaced                          |
 
 
+---

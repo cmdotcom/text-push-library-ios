@@ -16,5 +16,5 @@ let package = Package(
         // .package(url: /* package url */, from: "1.0.0"),
     ],
     targets:[
-		.binaryTarget(name: "CMPush", url: "https://github.com/cmdotcom/text-push-library-ios/raw/v2.0.0/CMPush.xcframework.zip", checksum: "efaa8a66c28397fb5a2c888a37de17caa3a8c506b50034c0f592c2ee5e328a64")
+		.binaryTarget(name: "CMPush", url: "https://github.com/cmdotcom/text-push-library-ios/raw/v2.1.0/CMPush.xcframework.zip", checksum: "971430282e5cdb6f223093a4af2e756ff24e445bbeedb4df054d6b7547fcdaa6")
 	])

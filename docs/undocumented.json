@@ -1,0 +1,19 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/nrichter/Repos/CM.com/marketing-mmc-lib-mobile-push-ios/CMPush/CMPushError.swift",
+      "line": 65,
+      "symbol": "CMPushError.localizedDescription",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nrichter/Repos/CM.com/marketing-mmc-lib-mobile-push-ios/CMPush/PushApi.swift",
+      "line": 4,
+      "symbol": "CMPush_SetTestUrl(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/nrichter/Repos/CM.com/marketing-mmc-lib-mobile-push-ios"
+}

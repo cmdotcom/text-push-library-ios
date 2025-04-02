@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CMPush  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+    <script src="js/lunr.min.js" defer></script>
+    <script src="js/typeahead.jquery.js" defer></script>
+    <script src="js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a title="CMPush  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">CMPush 2.1.0 Docs</a> (93% documented)</p>
+        <div class="header-right">
+          <form role="search" action="search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </div>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">CMPush</a>
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Enums/CMPushEnvironment.html">CMPushEnvironment</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/CMPushError.html">CMPushError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/CMPushSuggestion.html">CMPushSuggestion</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:6CMPush0A7_Config14applicationKey9groupNameySS_SStF">CMPush_Config(applicationKey:groupName:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:6CMPush0A26_HandleNotificationRequest_18withContentHandlerySo014UNNotificationD0C_ySo0hF0CctF">CMPush_HandleNotificationRequest(_:withContentHandler:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:6CMPush0A27_HandleNotificationResponse_21withCompletionHandlerySo014UNNotificationD0C_yyctF">CMPush_HandleNotificationResponse(_:withCompletionHandler:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:6CMPush0A20_HasRegisteredMSISDNSbyF">CMPush_HasRegisteredMSISDN()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:6CMPush0A15_InstallationIDSSSgyF">CMPush_InstallationID()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:6CMPush0A13_IsRegisteredSbyF">CMPush_IsRegistered()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:6CMPush0A24_SetApplePushEnvironmentyyAA0aE0OF">CMPush_SetApplePushEnvironment(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:6CMPush0A12_SetDelegateyyAA0aC0_pSgF">CMPush_SetDelegate(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:6CMPush0A17_UnregisterMSISDN10withResultyys0E0OyytAA0A5ErrorOGc_tF">CMPush_UnregisterMSISDN(withResult:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:6CMPush0A13_UpdateMSISDN_10withResultySS_ys0E0OyytAA0A5ErrorOGctF">CMPush_UpdateMSISDN(_:withResult:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:6CMPush0A10_UpdateOTP6msisdn3otp10withResultySS_SSys0G0OyytAA0A5ErrorOGctF">CMPush_UpdateOTP(msisdn:otp:withResult:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:6CMPush0A24_UpdatePushAuthorizationyyF">CMPush_UpdatePushAuthorization()</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:6CMPush0A12_UpdateToken06deviceC010withResulty10Foundation4DataV_ys0F0OySSAA0A5ErrorOGctF">CMPush_UpdateToken(deviceToken:withResult:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols/CMPushDelegate.html">CMPushDelegate</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <p><img src="./Images/logo.svg" alt="CM"></p>
+<h1 id='cmpush' class='heading'>CMPush</h1>
+
+<p>CMPush is a solution for sending rich push notifications to app users. These notifications support a <strong>default action</strong> (short tap) and long-press actions and media support for notifications.</p>
+
+<hr>
+<h2 id='table-of-contents' class='heading'>Table of Contents</h2>
+
+<ol>
+<li><a href="#introduction">Introduction</a><br></li>
+<li><a href="#getting-started">Getting Started</a><br>
+
+<ul>
+<li><a href="#prerequisites">Prerequisites</a><br></li>
+<li><a href="#onboarding-with-cm">Onboarding with CM</a><br></li>
+</ul></li>
+<li><a href="#installation">Installation</a><br>
+
+<ul>
+<li><a href="#swift-package-manager">Swift Package Manager</a><br></li>
+<li><a href="#manual-installation">Manual Installation</a><br></li>
+</ul></li>
+<li><a href="#configuration">Configuration</a>
+
+<ul>
+<li><a href="#add-notification-service-extension-target">Add Notification Service Extension target</a></li>
+<li><a href="#setting-up-appdelegate">Setting Up AppDelegate</a><br></li>
+<li><a href="#notification-service-extension">Notification Service Extension</a><br></li>
+</ul></li>
+<li><a href="#changelog">Changelog</a>
+
+<ul>
+<li><a href="#210">2.1.0</a></li>
+</ul></li>
+<li><a href="#features">Features</a><br></li>
+<li><a href="#troubleshooting">Troubleshooting</a><br></li>
+<li><a href="#reference">Reference</a><br>
+
+<ul>
+<li><a href="#api-glossary">API Glossary</a><br></li>
+</ul></li>
+<li><a href="#appendices">Appendices</a><br>
+<h2 id='a-href-deprecated-apis-deprecated-apis-a' class='heading'>- <a href="#deprecated-apis">Deprecated APIs</a></h2></li>
+</ol>
+<h2 id='introduction' class='heading'>Introduction</h2>
+
+<p>CMPush provides an easy-to-integrate library for delivering <strong>rich media push notifications</strong>. Key features include:  </p>
+
+<ul>
+<li><strong>Rich Media Support</strong></li>
+<li><strong>Single-tap Action</strong></li>
+<li><strong>Suggestions</strong></li>
+<li><strong>User Interaction Feedback</strong></li>
+</ul>
+
+<hr>
+<h2 id='requirements' class='heading'>Requirements</h2>
+<h3 id='prerequisites' class='heading'>Prerequisites</h3>
+
+<ul>
+<li><strong>Minimum iOS app deployment version</strong>: 12.0 or newer<br></li>
+<li><strong>Apple Developer Account</strong>: An Apple Developer Account is required to create a push notification certificate.</li>
+</ul>
+<h3 id='onboarding-with-cm' class='heading'>Onboarding with CM</h3>
+
+<p>To use CMPush, onboard with CM by:  </p>
+
+<ol>
+<li><strong>Generating a Certificate</strong>: Use the <code>.csr</code> file provided by CM to create an <strong>Apple Push Notification service SSL (Sandbox &amp; Production)</strong> certificate in the <a href="https://developer.apple.com/account/resources/certificates/list">Apple Developer Portal</a>.<br></li>
+<li><strong>Obtaining Application Key</strong>: CM will provide a unique <code>applicationKey</code>.</li>
+</ol>
+
+<hr>
+<h2 id='installation' class='heading'>Installation</h2>
+<h3 id='swift-package-manager' class='heading'>Swift Package Manager</h3>
+
+<ol>
+<li>Open Xcode and navigate to <code>File &gt; Add Package Dependencies...</code>.<br></li>
+<li>Enter the repository URL: <code>https://github.com/cmdotcom/text-push-library-ios</code>.<br></li>
+<li>Select &ldquo;Exact Version&rdquo; and choose the latest release.<br></li>
+</ol>
+<h3 id='manual-installation' class='heading'>Manual Installation</h3>
+
+<ol>
+<li>Copy the <code>CMPush.xcframework</code> into your project.<br></li>
+<li>Go to your XCode project settings, select your App target <code>General &gt; Frameworks, Libraries, and Embedded Content</code> and set the CMPush framework to &ldquo;Embed &amp; Sign&rdquo;.</li>
+</ol>
+
+<hr>
+<h2 id='configuration' class='heading'>Configuration</h2>
+<h3 id='add-notification-service-extension-target' class='heading'>Add Notification Service Extension target</h3>
+
+<p>![Add Notification Service Extension](./Images/XcodeExtension.png
+<img src="./Images/XcodeAddExtension.png" alt="Add Notification Service Extension"></p>
+<h3 id='enable-app-groups-remote-notifications-in-background-modes-amp-push-notifications' class='heading'>Enable App Groups, Remote notifications in Background Modes &amp; Push Notifications</h3>
+
+<p><img src="./Images/XcodePush.png" alt="Add capabilities"></p>
+
+<p>Note: The App Group is required to share data between the main app and the Notification Service Extension. Ensure the group name matches across configurations.</p>
+<h3 id='setting-up-appdelegate' class='heading'>Setting Up AppDelegate</h3>
+
+<p>Configure CMPush at application startup:  </p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">UIKit</span>
+<span class="kd">import</span> <span class="kt">CMPush</span>
+
+<span class="kd">@main</span>
+<span class="kd">class</span> <span class="kt">AppDelegate</span><span class="p">:</span> <span class="kt">UIResponder</span><span class="p">,</span> <span class="kt">UIApplicationDelegate</span><span class="p">,</span> <span class="kt">UNUserNotificationCenterDelegate</span><span class="p">,</span> <span class="kt">CMPushDelegate</span> <span class="p">{</span>
+
+    <span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span> <span class="nv">launchOptions</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIApplication</span><span class="o">.</span><span class="kt">LaunchOptionsKey</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+
+        <span class="cp">#if DEBUG</span>
+        <span class="kt">CMPush_SetApplePushEnvironment</span><span class="p">(</span><span class="o">.</span><span class="kt">Sandbox</span><span class="p">)</span>
+        <span class="cp">#endif</span>
+        <span class="kt">CMPush_Config</span><span class="p">(</span><span class="nv">applicationKey</span><span class="p">:</span> <span class="s">"1234"</span><span class="p">,</span> <span class="nv">groupName</span><span class="p">:</span> <span class="s">"group.com.cm.CMPushTest"</span><span class="p">)</span>
+        <span class="kt">CMPush_SetDelegate</span><span class="p">(</span><span class="k">self</span><span class="p">)</span>
+        <span class="kt">UIApplication</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">registerForRemoteNotifications</span><span class="p">()</span>
+        <span class="kt">UNUserNotificationCenter</span><span class="o">.</span><span class="nf">current</span><span class="p">()</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>
+
+        <span class="kt">UNUserNotificationCenter</span><span class="o">.</span><span class="nf">current</span><span class="p">()</span><span class="o">.</span><span class="nf">requestAuthorization</span><span class="p">(</span><span class="nv">options</span><span class="p">:</span> <span class="p">[</span><span class="o">.</span><span class="n">alert</span><span class="p">,</span> <span class="o">.</span><span class="n">sound</span><span class="p">,</span> <span class="o">.</span><span class="n">badge</span><span class="p">])</span> <span class="p">{</span> <span class="n">granted</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
+            <span class="kt">CMPush_UpdatePushAuthorization</span><span class="p">()</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="kc">true</span>
+    <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">didFailToRegisterForRemoteNotificationsWithError</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">Error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"Remote notification is unavailable: </span><span class="se">\(</span><span class="n">error</span><span class="o">.</span><span class="n">localizedDescription</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">didRegisterForRemoteNotificationsWithDeviceToken</span> <span class="nv">deviceToken</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">CMPush_UpdateToken</span><span class="p">(</span><span class="nv">deviceToken</span><span class="p">:</span> <span class="n">deviceToken</span><span class="p">)</span> <span class="p">{</span> <span class="n">result</span> <span class="k">in</span>
+            <span class="k">switch</span> <span class="n">result</span> <span class="p">{</span>
+                <span class="k">case</span> <span class="o">.</span><span class="nf">success</span><span class="p">(</span><span class="k">let</span> <span class="nv">installationID</span><span class="p">):</span>
+                    <span class="nf">print</span><span class="p">(</span><span class="s">"CM PUSH INSTALLATION ID: </span><span class="se">\(</span><span class="n">installationID</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+                <span class="k">case</span> <span class="o">.</span><span class="nf">failure</span><span class="p">(</span><span class="k">let</span> <span class="nv">error</span><span class="p">):</span>
+                    <span class="nf">print</span><span class="p">(</span><span class="s">"CM PUSH ERROR: </span><span class="se">\(</span><span class="n">error</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Handles interactions with notification</span>
+    <span class="kd">func</span> <span class="nf">userNotificationCenter</span><span class="p">(</span><span class="n">_</span> <span class="nv">center</span><span class="p">:</span> <span class="kt">UNUserNotificationCenter</span><span class="p">,</span> <span class="n">didReceive</span> <span class="nv">response</span><span class="p">:</span> <span class="kt">UNNotificationResponse</span><span class="p">,</span> <span class="n">withCompletionHandler</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">CMPush_HandleNotificationResponse</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="nv">withCompletionHandler</span><span class="p">:</span> <span class="n">completionHandler</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Function that gets called when user pressed on an action</span>
+    <span class="kd">func</span> <span class="nf">cmPushHandleSuggestion</span><span class="p">(</span><span class="n">_</span> <span class="nv">suggestion</span><span class="p">:</span> <span class="kt">CMPushSuggestion</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">switch</span> <span class="n">suggestion</span> <span class="p">{</span>
+            <span class="k">case</span> <span class="o">.</span><span class="nf">openURL</span><span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="k">let</span> <span class="nv">url</span><span class="p">):</span>
+                <span class="kt">UIApplication</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">open</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="nv">options</span><span class="p">:</span> <span class="p">[:],</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+            <span class="k">case</span> <span class="o">.</span><span class="nf">openAppPage</span><span class="p">(</span><span class="nv">label</span><span class="p">:</span> <span class="n">_</span><span class="p">,</span> <span class="k">let</span> <span class="nv">page</span><span class="p">):</span>
+                <span class="nf">print</span><span class="p">(</span><span class="s">"Open app page: </span><span class="se">\(</span><span class="n">page</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+            <span class="kd">@unknown</span> <span class="k">default</span><span class="p">:</span>
+                <span class="k">break</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+<hr>
+<h3 id='notification-service-extension' class='heading'>Notification Service Extension</h3>
+
+<p>Handle rich media notifications and delivery confirmations:  </p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">UserNotifications</span>
+<span class="kd">import</span> <span class="kt">CMPush</span>
+
+<span class="kd">class</span> <span class="kt">NotificationService</span><span class="p">:</span> <span class="kt">UNNotificationServiceExtension</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="nf">init</span><span class="p">()</span> <span class="p">{</span>
+        <span class="cp">#if DEBUG</span>
+        <span class="kt">CMPush_SetApplePushEnvironment</span><span class="p">(</span><span class="o">.</span><span class="kt">Sandbox</span><span class="p">)</span>
+        <span class="cp">#endif</span>
+        <span class="kt">CMPush_Config</span><span class="p">(</span><span class="nv">applicationKey</span><span class="p">:</span> <span class="s">"1234"</span><span class="p">,</span> <span class="nv">groupName</span><span class="p">:</span> <span class="s">"group.com.cm.CMPushTest"</span><span class="p">)</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">init</span><span class="p">()</span>
+    <span class="p">}</span>
+
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">didReceive</span><span class="p">(</span><span class="n">_</span> <span class="nv">request</span><span class="p">:</span> <span class="kt">UNNotificationRequest</span><span class="p">,</span> <span class="n">withContentHandler</span> <span class="nv">contentHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">UNNotificationContent</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">CMPush_HandleNotificationRequest</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="nv">withContentHandler</span><span class="p">:</span> <span class="n">contentHandler</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+<hr>
+<h2 id='changelog' class='heading'>Changelog</h2>
+<h3 id='2-1-0' class='heading'>2.1.0</h3>
+
+<p><strong>Added</strong></p>
+
+<ul>
+<li>Default action to notifications.</li>
+<li>Reply action for notifications.</li>
+<li>PrivacyInfo.xcprivacy file.</li>
+</ul>
+
+<p><strong>Modified</strong></p>
+
+<ul>
+<li>Status report sent to CM when the user opens a notification.</li>
+</ul>
+
+<p><strong>Fixed</strong></p>
+
+<ul>
+<li>Rich notification content not downloaded and displayed.</li>
+</ul>
+
+<p><strong>Removed</strong></p>
+
+<ul>
+<li>Deprecated functions from version 1.</li>
+</ul>
+
+<p><strong>Deprecated</strong></p>
+
+<ul>
+<li>SMS verification (OTP) flow functions.</li>
+</ul>
+
+<p><strong>Updated</strong></p>
+
+<ul>
+<li>This <code>README.md</code> file for the latest changes.</li>
+</ul>
+
+<hr>
+<h2 id='features' class='heading'>Features</h2>
+<h3 id='rich-media-support' class='heading'>Rich Media Support</h3>
+
+<p>Supported media types:  </p>
+
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Format</th>
+<th>Max Size</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Audio</td>
+<td>MP3 (audio/mpeg), MP4 (audio/m4a)</td>
+<td>5MB</td>
+</tr>
+<tr>
+<td>Images</td>
+<td>JPG (image/jpeg), PNG (image/png)</td>
+<td>10MB</td>
+</tr>
+<tr>
+<td>Video</td>
+<td>MP4 (video/mp4)</td>
+<td>50MB</td>
+</tr>
+</tbody></table>
+<h3 id='default-action' class='heading'>Default Action</h3>
+
+<p>Define a <code>defaultAction</code> in your push payload for single-tap actions. Example:  </p>
+<pre class="highlight json"><code><span class="p">{</span><span class="err">...</span><span class="w">
+  </span><span class="nl">"defaultAction"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OpenUrl"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com"</span><span class="w">
+  </span><span class="p">}</span><span class="err">...</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<hr>
+<h2 id='troubleshooting' class='heading'>Troubleshooting</h2>
+<h3 id='common-issues' class='heading'>Common Issues</h3>
+
+<ol>
+<li><p><strong>Push Token Registration Fails</strong>  </p>
+
+<ul>
+<li>Ensure Push Notifications and Remote notifications in Background Modes are enabled in app capabilities.<br></li>
+<li>Check if <code>CMPush_UpdateToken</code> is called in <code>didRegisterForRemoteNotifications</code>.</li>
+</ul></li>
+<li><p><strong>Not Receiving Notifications</strong></p>
+
+<ul>
+<li>Make sure that <code>CMPush_SetApplePushEnvironment(.Sandbox)</code> is set for debug builds.</li>
+</ul></li>
+<li><p><strong>Media And Suggestions Not Displayed</strong></p>
+
+<ul>
+<li>Check if <code>CMPush_HandleNotificationRequest</code> is called in the <code>didReceive</code> function of the Notification Service Extension.</li>
+<li>Ensure that the App Group capability is enabled in XCode and Apple Developer Portal.</li>
+<li>CMPush library is embedded in the Notification Service Extension. Alternatively, Notification Service Extension is embedded in the main target.</li>
+<li>Verify original media file size, media type and json structure of push payload.</li>
+</ul></li>
+<li><p><strong>Not Seeing Logging Messages Of Extension</strong></p>
+
+<ul>
+<li>Start app and send a notification to start the extension process.</li>
+<li>Attach the debugger to the process by going to <code>Debug &gt; Attach to Process</code> and selecting your extension from the list.
+<img src="./Images/XcodeAttachDebugger.png" alt="Enable Extension Debugging"></li>
+</ul></li>
+<li><p><strong>Nothing Happening After Interacting With Notification</strong></p>
+
+<ul>
+<li>Implement function <code>cmPushHandleSuggestion(suggestion)</code> in <code>extension AppDelegate : CMPushDelegate {}</code></li>
+</ul></li>
+</ol>
+
+<hr>
+<h2 id='reference' class='heading'>Reference</h2>
+<h3 id='api-glossary' class='heading'>API Glossary</h3>
+
+<ul>
+<li><p><code><a href="Functions.html#/s:6CMPush0A7_Config14applicationKey9groupNameySS_SStF">CMPush_Config(applicationKey:groupName:)</a></code><br>
+Initializes CMPush with an application key and group name.</p></li>
+<li><p><code>CMPush_SetDelegate</code>
+Set the AppDelegate so CMPush can call <code>cmPushHandleSuggestion(suggestion)</code>.</p></li>
+<li><p><code>CMPush_SetApplePushEnvironment</code>
+Set the Apple environment that CM should use to send notifications. Use .Sandbox for Debug builds and .Production (default) for production builds.</p></li>
+<li><p><code>CMPush_UpdatePushAuthorization</code>
+Update the registration at CM about the authorization given by the user to show push notifications.</p></li>
+<li><p><code><a href="Functions.html#/s:6CMPush0A12_UpdateToken06deviceC010withResulty10Foundation4DataV_ys0F0OySSAA0A5ErrorOGctF">CMPush_UpdateToken(deviceToken:withResult:)</a></code><br>
+Registers the device token and returns an installation ID.</p></li>
+<li><p><code><a href="Functions.html#/s:6CMPush0A27_HandleNotificationResponse_21withCompletionHandlerySo014UNNotificationD0C_yyctF">CMPush_HandleNotificationResponse(_:withCompletionHandler:)</a></code>
+Handle action that was pressed by the user.</p></li>
+<li><p><code><a href="Functions.html#/s:6CMPush0A26_HandleNotificationRequest_18withContentHandlerySo014UNNotificationD0C_ySo0hF0CctF">CMPush_HandleNotificationRequest(_:withContentHandler:)</a></code>
+Pre-process the received CM Push NotificationRequest.</p></li>
+<li><p><code>CMPush_IsRegistered</code>
+Returns true if registered to CM server.</p></li>
+<li><p><code>CMPush_InstallationID</code></p>
+<h2 id='returns-installationid-if-registered-to-cm-server' class='heading'>Returns installationID if registered to CM server.</h2></li>
+</ul>
+<h2 id='appendices' class='heading'>Appendices</h2>
+<h3 id='deprecated-apis' class='heading'>Deprecated APIs</h3>
+
+<p>The following APIs are deprecated and no longer supported:  </p>
+
+<table><thead>
+<tr>
+<th>API Method</th>
+<th>Used In Version</th>
+<th>Replacement</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>CMPush_PreRegister(msisdn:sender:withResult:)</code></td>
+<td>v1</td>
+<td><code><a href="Functions.html#/s:6CMPush0A13_UpdateMSISDN_10withResultySS_ys0E0OyytAA0A5ErrorOGctF">CMPush_UpdateMSISDN(_:withResult:)</a></code></td>
+</tr>
+<tr>
+<td><code>CMPush_Register(msisdn:otpCode:withResult:)</code></td>
+<td>v1</td>
+<td><code><a href="Functions.html#/s:6CMPush0A10_UpdateOTP6msisdn3otp10withResultySS_SSys0G0OyytAA0A5ErrorOGctF">CMPush_UpdateOTP(msisdn:otp:withResult:)</a></code></td>
+</tr>
+<tr>
+<td><code>CMPush_StatusReport(bestAttemptContent:withResult:)</code></td>
+<td>v1</td>
+<td><code><a href="Functions.html#/s:6CMPush0A26_HandleNotificationRequest_18withContentHandlerySo014UNNotificationD0C_ySo0hF0CctF">CMPush_HandleNotificationRequest(_:withContentHandler:)</a></code></td>
+</tr>
+<tr>
+<td><code>CMPush_DeleteRegistration(withResult:)</code></td>
+<td>v1</td>
+<td><code><a href="Functions.html#/s:6CMPush0A17_UnregisterMSISDN10withResultyys0E0OyytAA0A5ErrorOGc_tF">CMPush_UnregisterMSISDN(withResult:)</a></code></td>
+</tr>
+<tr>
+<td><code><a href="Functions.html#/s:6CMPush0A13_UpdateMSISDN_10withResultySS_ys0E0OyytAA0A5ErrorOGctF">CMPush_UpdateMSISDN(_:withResult:)</a></code></td>
+<td>v2</td>
+<td>Not replaced</td>
+</tr>
+<tr>
+<td><code><a href="Functions.html#/s:6CMPush0A10_UpdateOTP6msisdn3otp10withResultySS_SSys0G0OyytAA0A5ErrorOGctF">CMPush_UpdateOTP(msisdn:otp:withResult:)</a></code></td>
+<td>v2</td>
+<td>Not replaced</td>
+</tr>
+<tr>
+<td><code><a href="Functions.html#/s:6CMPush0A17_UnregisterMSISDN10withResultyys0E0OyytAA0A5ErrorOGc_tF">CMPush_UnregisterMSISDN(withResult:)</a></code></td>
+<td>v2</td>
+<td>Not replaced</td>
+</tr>
+<tr>
+<td><code>CMPush_HasRegisteredMSISDN</code></td>
+<td>v2</td>
+<td>Not replaced</td>
+</tr>
+</tbody></table>
+
+<hr>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2025 <a class="link" href="https://cm.com" target="_blank" rel="external noopener">CM</a>. All rights reserved. (Last updated: 2025-02-28)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.15.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</html>
